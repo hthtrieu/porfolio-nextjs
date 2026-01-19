@@ -2,9 +2,9 @@
 
 import React from "react";
 import SectionHeading from "./section-heading";
-import { skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
+import { skillsDataList } from "@/lib/data";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -31,9 +31,9 @@ export default function Skills() {
     >
       <SectionHeading>My skills</SectionHeading>
       <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
-        {skillsData.map((skill, index) => (
+        {skillsDataList.map((skill, index) => (
           <motion.li
-            className="bg-white borderBlack rounded-xl px-5 py-3 dark:bg-white/10 dark:text-white/80"
+            className="bg-white px-3 py-2 dark:bg-white/10 dark:text-white/80 flex gap-1 border-purple-400 border-2 rounded-3xl"
             key={index}
             variants={fadeInAnimationVariants}
             initial="initial"
@@ -43,7 +43,8 @@ export default function Skills() {
             }}
             custom={index}
           >
-            {skill}
+            <img src={skill.logo} alt={skill.name} />
+            {skill.name}
           </motion.li>
         ))}
       </ul>

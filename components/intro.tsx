@@ -10,6 +10,7 @@ import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import avatar from "@/public/profile.jpg";
+import TypewriterComponent from "typewriter-effect";
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
@@ -18,7 +19,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem] space-y-8"
     >
       <div className="flex items-center justify-center">
         <div className="relative">
@@ -52,7 +53,9 @@ export default function Intro() {
               duration: 0.7,
             }}
           >
-            👋
+            <span className="wave" role="img" aria-labelledby="wave">
+              👋🏻
+            </span>
           </motion.span>
         </div>
       </div>
@@ -63,8 +66,17 @@ export default function Intro() {
         animate={{ opacity: 1, y: 0 }}
       >
         <span className="font-bold">Hello, I'm Trieu.</span> I'm a{" "}
-        <span className="font-bold">full-stack developer</span> I enjoy
-        building <span className="italic">sites & apps</span>
+        <span className="font-bold">
+          <TypewriterComponent
+            options={{
+              strings: ["Software Developer", "Freelancer", "Content Creator"],
+              autoStart: true,
+              loop: true,
+              deleteSpeed: 50,
+            }}
+          />
+        </span>{" "}
+        I enjoy building <span className="italic">sites & apps</span>
       </motion.h1>
 
       <motion.div
@@ -75,7 +87,7 @@ export default function Intro() {
           delay: 0.1,
         }}
       >
-        <Link
+        {/* <Link
           href="#contact"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
           onClick={() => {
@@ -85,11 +97,11 @@ export default function Intro() {
         >
           Contact me here{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
-        </Link>
+        </Link> */}
 
         <a
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-          href="/HuynhThanhHaiTrieuResume.pdf"
+          href="https://drive.google.com/file/d/10f6C9aZ-YwjwsUWE8YIx1_V2sZG6aDwP/view?usp=drive_link"
           download
         >
           Download CV{" "}

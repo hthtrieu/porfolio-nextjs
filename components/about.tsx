@@ -3,14 +3,10 @@
 import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
-import { useSectionInView } from "@/lib/hooks";
 
 export default function About() {
-  const { ref } = useSectionInView("About");
-
   return (
     <motion.section
-      ref={ref}
       className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
@@ -18,7 +14,7 @@ export default function About() {
       id="about"
     >
       <SectionHeading>About me</SectionHeading>
-      <p className="mb-3">
+      {/* <p className="mb-3">
         I'm currently a student at Da Nang University of Science and Technology
         (DUT), pursuing a degree in Information Technology with a specialization
         in Software Technology. <br></br>
@@ -28,7 +24,7 @@ export default function About() {
         <span className="font-medium">
           React, Laravel, Express, and more.
         </span>{" "}
-      </p>
+      </p> */}
       <p className="mb-3">
         I am passionate about leveraging these skills to create innovative and
         efficient solutions. Eager to contribute to the world of technology, I
